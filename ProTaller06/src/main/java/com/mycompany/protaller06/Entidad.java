@@ -4,10 +4,21 @@
  */
 package com.mycompany.protaller06;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author CltControl
  */
-public class Entidad {
-    
+public abstract class Entidad {
+    String nombre;
+    List<String> acciones = new ArrayList<>();
+
+    void addAccion(String accion) {
+        acciones.add(accion);
+    }
+
+    abstract void agregarSprite();
+    abstract void definirCaracteristicas();
 }
