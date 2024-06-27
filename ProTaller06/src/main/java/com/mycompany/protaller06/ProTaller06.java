@@ -4,7 +4,11 @@
 
 package com.mycompany.protaller06;
 
+
 import Builder.*;
+
+import singleton.ConfiguracionJuego;
+
 
 /**
  *
@@ -21,6 +25,28 @@ public class ProTaller06 {
 
         jugador.dibujar();
         jugador.actualizar();
+
+        System.out.println("Hello World!");
+        
+        // Codigo para uso del patron Singleton en el main
+            ConfiguracionJuego config = ConfiguracionJuego.getInstancia();
+
+            // Configurar el juego según la configuración
+            System.out.println("Dimensiones de pantalla: " + config.getDimensionesPantalla());
+            System.out.println("Memoria RAM mínima: " + config.getMemoriaRAMMinima() + " MB");
+            System.out.println("Espacio en disco mínimo: " + config.getEspacioDiscoMinimo() + " MB");
+
+            // Ejemplo de cambiar la configuración
+            config.setDimensionesPantalla("2560x1440");
+            config.setMemoriaRAMMinima(4096);
+            config.setEspacioDiscoMinimo(20480);
+
+            // Mostrar la nueva configuración
+            System.out.println("Nueva configuración:");
+            System.out.println("Dimensiones de pantalla: " + config.getDimensionesPantalla());
+            System.out.println("Memoria RAM mínima: " + config.getMemoriaRAMMinima() + " MB");
+            System.out.println("Espacio en disco mínimo: " + config.getEspacioDiscoMinimo() + " MB");
+        
 
     }
 }
