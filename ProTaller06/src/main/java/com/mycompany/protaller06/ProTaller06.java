@@ -4,6 +4,8 @@
 
 package com.mycompany.protaller06;
 
+import Builder.*;
+
 /**
  *
  * @author CltControl
@@ -11,6 +13,14 @@ package com.mycompany.protaller06;
 public class ProTaller06 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        EntidadBuilder builder = new JugadorBuilder();
+        EntidadDirector director = new EntidadDirector(builder);
+
+        director.construirEntidad("Jugador1");
+        Entidad jugador = director.getEntidad();
+
+        jugador.dibujar();
+        jugador.actualizar();
+
     }
 }
